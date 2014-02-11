@@ -53,16 +53,26 @@ def permutationString(string, s):
         s=s[0:-1]
 
 
+def xorswap(l, index1, index2):
+  l[index1]= l[index1]^l[index2]
+  l[index2]= l[index1]^l[index2]
+  l[index1]= l[index1]^l[index2]
+  
 
 def main():
   #print sys.argv[1]
   #print fibonaci(int(sys.argv[1]))
-  res=[]
-  input=[]
+  #es=[]
+  #nput=[]
 
-  permutationString('abc','')
-  permutationList([1,2,3],0)
+  #ermutationString('abc','')
+  #ermutationList([1,2,3],0)
   
+  sequence=[1,2,3,4,5]
+  print sequence
+  xorswap(sequence, 2,4)
+  print sequence
+ 
 
 if __name__ == "__main__":
   main()
