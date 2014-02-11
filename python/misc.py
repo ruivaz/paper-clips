@@ -29,10 +29,40 @@ def fibonaci(number):
   
 
 
-def main():
-  print sys.argv[1]
-  print fibonaci(int(sys.argv[1]))
 
+def permutationList(list, i):
+  if i==len(list)-1:
+    print list         	
+  else:
+    for j in range(i, len(list)):
+      list[i], list[j] = list[j], list[i]
+      permutation(list, i+1)
+      list[j], list[i] = list[i], list[j]
+  
+
+
+def permutationString(string, s):
+  if len(s)==len(string):
+    print s
+  else:
+    for i in string:
+      if i in s: continue
+      else:
+        s=s+i
+        permutationString(string,s)
+        s=s[0:-1]
+
+
+
+def main():
+  #print sys.argv[1]
+  #print fibonaci(int(sys.argv[1]))
+  res=[]
+  input=[]
+
+  permutationString('abc','')
+  permutationList([1,2,3],0)
+  
 
 if __name__ == "__main__":
   main()
