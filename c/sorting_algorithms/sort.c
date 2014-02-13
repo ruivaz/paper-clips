@@ -42,16 +42,3 @@ void bubblesort(int *list, int size){
     size--;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
