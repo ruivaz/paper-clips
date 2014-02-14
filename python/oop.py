@@ -10,8 +10,11 @@ class pet:
 class dog(pet):
   def bark(self):
     print "Woof"
+  def sleep(self):
+    print "ZzwoofzZ"
 
 doug = dog()
 doug.number_of_legs = 4
 doug.count_legs()
 doug.bark()
+doug.sleep()
