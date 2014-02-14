@@ -21,5 +21,13 @@ int main(){
   bubblesort(list, size-1);
   printList(list, size);
 
+  //merge test
+  
+  int left[4]={3,7,9,14};
+  int right[3]={1,10,11};
+  int *result =  merge(left, right, 4, 3);
+
+  printList(result, 7);
+
   return 0;
 }
