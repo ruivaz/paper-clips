@@ -24,8 +24,48 @@ def quicksort(list, left, right):
 
 
 
+def mergeSort(list):
+  size = len(list)
+  if size<=1:
+    return list 
+  mid = size/2
+  left=list[0:mid]
+  right=list[mid:size]
+  #print left
+  #print right
+
+  left=mergeSort(left)
+  right=mergeSort(right)
+  return merge(left, right, len(left), len(right))
+   
+
+def merge(left, right, leftSize, rightSize):
+  leftIndex=0
+  rightIndex=0
+  resultList = []
+  while rightIndex < rightSize or leftIndex < leftSize:
+    if rightIndex < rightSize and leftIndex < leftSize:
+      if left[leftIndex] <= right[rightIndex]:
+        resultList.append(left[leftIndex])
+        leftIndex+=1
+      else:
+        resultList.append(right[rightIndex])
+        rightIndex+=1
+    elif rightIndex < rightSize:
+      resultList.append(right[rightIndex])
+      rightIndex+=1
+    else:
+      resultList.append(left[leftIndex])
+      leftIndex+=1
+  return resultList
+
+      
+
 l=[7,12,4,34,6,9,22,45,2,1]
 
-print l
-quicksort(l, 0, len(l)-1)
-print l
+l1=[11,15,23,24,32]
+l2=[9,32,42,44,54,81]
+#print l
+#quicksort(l, 0, len(l)-1)
+
+print mergeSort(l)
