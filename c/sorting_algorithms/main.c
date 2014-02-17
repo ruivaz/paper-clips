@@ -16,18 +16,20 @@ int main(){
 
   int size=sizeof(list)/sizeof(int);
 
-  printList(list, size);
   //quicksort(list, 0, size-1);
-  bubblesort(list, size-1);
+  //bubblesort(list, size-1);
+  
   printList(list, size);
-
+  
   //merge test
   
-  int left[4]={3,7,9,14};
-  int right[3]={1,10,11};
-  int *result =  merge(left, right, 4, 3);
+  //int left[4]={3,7,9,14};
+  //int right[3]={1,10,11};
+  //int *result =  merge(left, right, 4, 3);
 
-  printList(result, 7);
+  int *result = mergeSort(list, 8);
+
+  printList(result, 8);
 
   return 0;
 }

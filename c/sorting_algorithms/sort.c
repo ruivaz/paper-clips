@@ -1,5 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+static int *merge(int *left, int *right, int left_size, int right_size);
+
 static void swap(int *list, int index1, int index2){
   int temp=list[index1];
   list[index1]=list[index2];
@@ -44,16 +47,32 @@ void bubblesort(int *list, int size){
 }
 
 
-//partitionList(int *list)
+static int *partitionList(int *list, int beginIndex, int endIndex){
+  int size=(endIndex-beginIndex) + 1;
+  int *resultList = malloc(sizeof(int)*size);
+  int i;
 
-//int *mergeSort(int *list, int size){
-//  if (size<=1)
-//    return list;
-//}
+  for(i=0; i<=size; i++){
+    resultList[i] = list[beginIndex+i];
+  }
+
+  return resultList;
+}
+
+int *mergeSort(int *list, int size){
+  if (size <= 1)
+    return list;
+  int mid = (size - 1)/2;
+  int *left  = partitionList(list, 0, mid); 
+  int *right = partitionList(list, mid+1, size);
+  left = mergeSort(left, mid+1);
+  right = mergeSort(right, size-(mid+1));
+  return merge(left, right, mid+1, size-(mid+1));
+}
 
 
 
-int *merge(int *left, int *right, int left_size, int right_size){
+static int *merge(int *left, int *right, int left_size, int right_size){
   int *merge_list=malloc(sizeof(int)*(left_size+right_size));
   int left_index, right_index, i;
   left_index = right_index = i = 0;
