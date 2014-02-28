@@ -60,19 +60,10 @@ def xorswap(l, index1, index2):
   
 
 def main():
-  #print sys.argv[1]
-  #print fibonaci(int(sys.argv[1]))
-  #es=[]
-  #nput=[]
 
-  #ermutationString('abc','')
-  #ermutationList([1,2,3],0)
+  permutationString('abc','')
+  #permutationList([1,2,3],0)
   
-  sequence=[1,2,3,4,5]
-  print sequence
-  xorswap(sequence, 2,4)
-  print sequence
- 
 
 if __name__ == "__main__":
   main()

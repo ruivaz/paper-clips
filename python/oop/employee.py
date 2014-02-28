@@ -35,6 +35,8 @@ emp1=Employee('Sara', 14000, "Rua de Camoes")
 emp2=Employee('Jenelle', 19000, "Rua da Boavista")
 
 
-emp1.displayInfo()
+a = emp1.displayInfo()
+
+print a
 print '-------------------------'
 

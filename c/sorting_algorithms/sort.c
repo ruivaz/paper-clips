@@ -101,6 +101,8 @@ static int *merge(int *left, int *right, int left_size, int right_size){
       i++;
     }
   }
+  free(right);
+  free(left);
   return merge_list;
 }
 

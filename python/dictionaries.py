@@ -1,4 +1,5 @@
-mydict = {'carl': 40, 'alan':2, 'bob':1, 'danny':3}
+mydict = {1: 10, 3:22, 4:18, 2:32}
 
-for key in sorted(mydict.iterkeys()):
-  print "%s: %s" % (key, mydict[key])
+
+for element in sorted(mydict.iteritems(), key = lambda item: item[0]):
+  print element

@@ -18,5 +18,3 @@ if __name__ == "__main__":
       else:
         my_message = sys.stdin.readLine()
         s.send(my_message)
-
-
